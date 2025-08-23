@@ -303,7 +303,7 @@ body {
 .shape {
   position: absolute;
   z-index: 1;
-  opacity: 0.3;
+  opacity: 0.1;
   animation: moveShape 15s infinite linear;
 }
 
@@ -406,7 +406,7 @@ body {
   height: 60px;
   background: var(--primary-light-color);
   transform: rotate(45deg);
-  animation-duration: 32s;
+  animation-duration: 24s;
   animation-delay: 1s;
 }
 
