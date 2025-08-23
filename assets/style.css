@@ -748,7 +748,7 @@ body {
 .carousel-track {
    display: flex;
    animation: carouselScroll 25s linear infinite;
-   width: calc(200px * 14);
+   width: calc(200px);
 }
 
 .partner-item {
