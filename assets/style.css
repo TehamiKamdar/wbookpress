@@ -544,6 +544,7 @@ body {
    border-radius: 12px;
    overflow: hidden;
    transition: all 0.3s ease;
+   position: relative;
    height: 100%;
    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
    border: 1px solid #eee;
@@ -591,6 +592,7 @@ body {
    color: #666;
    margin-bottom: 1.5rem;
    line-height: 1.6;
+   min-height: 160px;
 }
 
 .service-content a {
@@ -1087,30 +1089,6 @@ body {
 .book-card:hover .book-actions {
    opacity: 1;
    transform: translateY(0);
-}
-
-.btn {
-   padding: 8px 15px;
-   border-radius: 6px;
-   border: none;
-   cursor: pointer;
-   font-weight: 600;
-   transition: all 0.3s ease;
-   display: flex;
-   align-items: center;
-   gap: 5px;
-   font-size: 0.9rem;
-}
-
-.btn-primary {
-   background: var(--secondary-color);
-   color: white;
-   flex-grow: 1;
-   justify-content: center;
-}
-
-.btn-primary:hover {
-   background: black;
 }
 
 .btn-icon {
