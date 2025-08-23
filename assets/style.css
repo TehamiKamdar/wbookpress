@@ -507,12 +507,12 @@ body {
   background: linear-gradient(to bottom, #ffffff, #f9f9f9);
 }
 
-.section-title {
+.services-section .section-title {
   text-align: center;
   margin-bottom: 3rem;
 }
 
-.section-title h2 {
+.services-section .section-title h2 {
   font-weight: 800;
   color: var(--secondary-color);
   position: relative;
@@ -520,7 +520,7 @@ body {
   margin-bottom: 1rem;
 }
 
-.section-title h2:after {
+.services-section .section-title h2:after {
   content: '';
   position: absolute;
   bottom: -10px;
@@ -532,7 +532,7 @@ body {
   border-radius: 2px;
 }
 
-.section-title p {
+.services-section .section-title p {
   color: #666;
   max-width: 700px;
   margin: 0 auto;
