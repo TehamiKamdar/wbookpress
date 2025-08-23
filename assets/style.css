@@ -721,7 +721,7 @@ body {
    display: inline-block;
 }
 
-.partners-section .section-title:after {
+.partners-section .section-title h2:after {
    content: '';
    position: absolute;
    bottom: -10px;
