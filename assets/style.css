@@ -820,15 +820,19 @@ body {
 }
 
 .testimonial {
-   color: white;
-   font-style: italic;
    max-width: 800px;
    margin: 0 auto;
    padding: 20px;
    border-left: 3px solid var(--primary-color);
-   text-align: left;
    background: rgba(255, 255, 255, 0.03);
    border-radius: 0 8px 8px 0;
+}
+
+.testimonial-content{
+   color: white;
+   font-style: italic;
+   text-align: left;
+   min-height: 80px;
 }
 
 .testimonial-author {

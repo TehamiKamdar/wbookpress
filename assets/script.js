@@ -1,57 +1,69 @@
-document.addEventListener('DOMContentLoaded', function () {
+$(document).ready(function () {
    // Carousel
-   const track = document.querySelector('.carousel-track');
-   const carousel = document.querySelector('.partners-carousel');
+   const $track = $('.carousel-track');
+   const $carousel = $('.partners-carousel');
 
    // Pause on hover
-   carousel.addEventListener('mouseenter', function () {
-      track.classList.add('paused');
+   $carousel.on('mouseenter', function () {
+      $track.addClass('paused');
    });
 
-   carousel.addEventListener('mouseleave', function () {
-      track.classList.remove('paused');
+   $carousel.on('mouseleave', function () {
+      $track.removeClass('paused');
    });
 
    // Book Filter
-   const categoryButtons = document.querySelectorAll('.category-btn');
-   const bookCards = document.querySelectorAll('.book-card');
+   const $categoryButtons = $('.category-btn');
+   const $bookCards = $('.book-card');
 
-   // Category filter functionality
-   categoryButtons.forEach(button => {
-      button.addEventListener('click', () => {
-         // Remove active class from all buttons
-         categoryButtons.forEach(btn => btn.classList.remove('active'));
+   $categoryButtons.on('click', function () {
+      // Remove active from all
+      $categoryButtons.removeClass('active');
 
-         // Add active class to clicked button
-         button.classList.add('active');
+      // Add active to clicked
+      $(this).addClass('active');
 
-         const category = button.getAttribute('data-category');
+      const category = $(this).data('category');
 
-         // Filter books
-         bookCards.forEach(card => {
-            if (category === 'all' || card.getAttribute('data-category') === category) {
-               card.style.display = 'flex';
-            } else {
-               card.style.display = 'none';
-            }
-         });
+      // Filter books
+      $bookCards.each(function () {
+         const $card = $(this);
+         if (category === 'all' || $card.data('category') === category) {
+            $card.css('display', 'flex');
+         } else {
+            $card.css('display', 'none');
+         }
       });
    });
 
    // Add to wishlist animation
-   const wishlistButtons = document.querySelectorAll('.btn-icon');
-   wishlistButtons.forEach(button => {
-      button.addEventListener('click', function () {
-         const icon = this.querySelector('i');
-         if (icon.classList.contains('ri-heart-line')) {
-            icon.classList.remove('ri-heart-line');
-            icon.classList.add('ri-heart-fill');
-            icon.style.color = '#fd5656';
-         } else {
-            icon.classList.remove('ri-heart-fill');
-            icon.classList.add('ri-heart-line');
-            icon.style.color = '';
-         }
-      });
+   $('.btn-icon').on('click', function () {
+      const $icon = $(this).find('i');
+      if ($icon.hasClass('ri-heart-line')) {
+         $icon.removeClass('ri-heart-line')
+            .addClass('ri-heart-fill')
+            .css('color', '#fd5656');
+      } else {
+         $icon.removeClass('ri-heart-fill')
+            .addClass('ri-heart-line')
+            .css('color', '');
+      }
    });
+
+   $('.owl-carousel').owlCarousel({
+      loop: true,
+      margin: 10,
+      nav: true,
+      responsive: {
+         0: {
+            items: 1
+         },
+         600: {
+            items: 1
+         },
+         1000: {
+            items: 2
+         }
+      }
+   })
 });
