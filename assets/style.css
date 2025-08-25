@@ -106,7 +106,9 @@ body {
    border: none;
    color: white !important;
 }
-
+.navbar-toggler-icon-close {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23fff'%3e%3cpath d='M.293.293a1 1 0 011.414 0L8 6.586 14.293.293a1 1 0 111.414 1.414L9.414 8l6.293 6.293a1 1 0 01-1.414 1.414L8 9.414l-6.293 6.293a1 1 0 01-1.414-1.414L6.586 8 .293 1.707a1 1 0 010-1.414z'/%3e%3c/svg%3e");
+}
 .navbar-toggler:focus {
    box-shadow: none;
 }
@@ -122,8 +124,120 @@ body {
    background-color: var(--primary-dark-color);
    color: white;
    border-color: var(--btn-primary-color);
+}/* Off-Canvas Menu & Backdrop */
+@media (max-width: 992px) {
+    /* Style for the sliding menu */
+    .offcanvas-menu {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 80%; /* Adjust the width as needed */
+        height: 100vh;
+        background-color: var(--secondary-color);
+        box-shadow: -5px 0 15px rgba(0, 0, 0, 0.2);
+        transition: right 0.3s ease-in-out;
+        z-index: 1050;
+        padding: 2rem 1rem;
+        display: flex; /* Changed to flexbox */
+        flex-direction: column;
+        justify-content: flex-start; /* Aligned to the top */
+    }
+
+    .offcanvas-content {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+    }
+
+    /* Style for the close button inside the menu */
+    .offcanvas-menu .btn-close {
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        background: none;
+        border: none;
+        font-size: 1.5rem;
+        color: white; /* Close button color */
+        padding: 0;
+        opacity: 1;
+        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23FDB808'%3e%3cpath d='M.293.293a1 1 0 011.414 0L8 6.586 14.293.293a1 1 0 111.414 1.414L9.414 8l6.293 6.293a1 1 0 01-1.414 1.414L8 9.414l-6.293 6.293a1 1 0 01-1.414-1.414L6.586 8 .293 1.707a1 1 0 010-1.414z'/%3e%3c/svg%3e");
+    }
+
+    /* Style for the menu when it's open */
+    .offcanvas-menu.show {
+        right: 0;
+    }
+
+    /* Adjust font and spacing for mobile menu items */
+    .offcanvas-menu .navbar-nav {
+        flex-direction: column;
+        width: 100%;
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    .offcanvas-menu .nav-item {
+        width: 100%;
+        text-align: left;
+        margin-bottom: 1rem;
+    }
+
+    .offcanvas-menu .nav-link {
+        font-size: 1.25rem;
+        padding: 0.75rem 0;
+    }
+
+    /* Style for the semi-transparent backdrop */
+    .offcanvas-backdrop {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 1040;
+        visibility: hidden;
+        opacity: 0;
+        transition: opacity 0.3s ease-in-out, visibility 0s 0.3s;
+    }
+
+    /* Style for the backdrop when it's visible */
+    .offcanvas-backdrop.show {
+        visibility: visible;
+        opacity: 1;
+        transition-delay: 0s;
+    }
 }
 
+/* New CSS to fix the big screen layout */
+@media (min-width: 993px) {
+    .offcanvas-menu {
+        position: static;
+        width: auto;
+        height: auto;
+        background-color: transparent;
+        box-shadow: none;
+        padding: 0;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .offcanvas-menu .offcanvas-content {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+    }
+
+    .offcanvas-menu .btn-close {
+        display: none;
+    }
+    
+    /* Hide the backdrop on large screens */
+    .offcanvas-backdrop {
+        display: none !important;
+    }
+}
 .btn-outline {
    background-color: transparent;
    color: var(--primary-color);
