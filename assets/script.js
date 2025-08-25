@@ -1,69 +1,94 @@
-$(document).ready(function () {
-   // Carousel
-   const $track = $('.carousel-track');
-   const $carousel = $('.partners-carousel');
+document.addEventListener('DOMContentLoaded', function () {
 
-   // Pause on hover
-   $carousel.on('mouseenter', function () {
-      $track.addClass('paused');
-   });
+    // --- NEW: Off-Canvas Menu Logic ---
+    const navContent = document.getElementById('navbarContent');
+    const toggler = document.querySelector('.navbar-toggler');
+    const closeBtn = document.querySelector('.btn-close');
+    const backdrop = document.querySelector('.offcanvas-backdrop');
 
-   $carousel.on('mouseleave', function () {
-      $track.removeClass('paused');
-   });
+    // Function to show/hide the menu and backdrop
+    function toggleOffcanvas() {
+        navContent.classList.toggle('show');
+        backdrop.classList.toggle('show');
+    }
 
-   // Book Filter
-   const $categoryButtons = $('.category-btn');
-   const $bookCards = $('.book-card');
+    // Event listeners to handle opening and closing the menu
+    if (toggler) {
+        toggler.addEventListener('click', toggleOffcanvas);
+    }
 
-   $categoryButtons.on('click', function () {
-      // Remove active from all
-      $categoryButtons.removeClass('active');
+    if (closeBtn) {
+        closeBtn.addEventListener('click', toggleOffcanvas);
+    }
+    
+    // Close the menu if the user clicks the backdrop
+    if (backdrop) {
+        backdrop.addEventListener('click', toggleOffcanvas);
+    }
+    
+    // Check for screen size changes to hide the off-canvas menu on desktop
+    window.addEventListener('resize', () => {
+        if (window.innerWidth > 992) {
+            navContent.classList.remove('show');
+            backdrop.classList.remove('show');
+        }
+    });
 
-      // Add active to clicked
-      $(this).addClass('active');
+    // --- EXISTING: Carousel Logic ---
+    const track = document.querySelector('.carousel-track');
+    const carousel = document.querySelector('.partners-carousel');
 
-      const category = $(this).data('category');
-
-      // Filter books
-      $bookCards.each(function () {
-         const $card = $(this);
-         if (category === 'all' || $card.data('category') === category) {
-            $card.css('display', 'flex');
-         } else {
-            $card.css('display', 'none');
-         }
+    if (carousel && track) {
+      // Pause on hover
+      carousel.addEventListener('mouseenter', function () {
+        track.classList.add('paused');
       });
-   });
 
-   // Add to wishlist animation
-   $('.btn-icon').on('click', function () {
-      const $icon = $(this).find('i');
-      if ($icon.hasClass('ri-heart-line')) {
-         $icon.removeClass('ri-heart-line')
-            .addClass('ri-heart-fill')
-            .css('color', '#fd5656');
-      } else {
-         $icon.removeClass('ri-heart-fill')
-            .addClass('ri-heart-line')
-            .css('color', '');
-      }
-   });
+      carousel.addEventListener('mouseleave', function () {
+        track.classList.remove('paused');
+      });
+    }
 
-   $('.owl-carousel').owlCarousel({
-      loop: true,
-      margin: 10,
-      nav: true,
-      responsive: {
-         0: {
-            items: 1
-         },
-         600: {
-            items: 1
-         },
-         1000: {
-            items: 2
-         }
-      }
-   })
+    // --- EXISTING: Book Filter Logic ---
+    const categoryButtons = document.querySelectorAll('.category-btn');
+    const bookCards = document.querySelectorAll('.book-card');
+
+    // Category filter functionality
+    categoryButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            // Remove active class from all buttons
+            categoryButtons.forEach(btn => btn.classList.remove('active'));
+
+            // Add active class to clicked button
+            button.classList.add('active');
+
+            const category = button.getAttribute('data-category');
+
+            // Filter books
+            bookCards.forEach(card => {
+                if (category === 'all' || card.getAttribute('data-category') === category) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        });
+    });
+
+    // --- EXISTING: Add to wishlist animation ---
+    const wishlistButtons = document.querySelectorAll('.btn-icon');
+    wishlistButtons.forEach(button => {
+        button.addEventListener('click', function () {
+            const icon = this.querySelector('i');
+            if (icon.classList.contains('ri-heart-line')) {
+                icon.classList.remove('ri-heart-line');
+                icon.classList.add('ri-heart-fill');
+                icon.style.color = '#fd5656';
+            } else {
+                icon.classList.remove('ri-heart-fill');
+                icon.classList.add('ri-heart-line');
+                icon.style.color = '';
+            }
+        });
+    });
 });
