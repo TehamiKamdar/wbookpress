@@ -564,7 +564,7 @@ body {
    align-items: center;
    justify-content: center;
    margin: 0 auto;
-   margin-top: -40px;
+   margin-top: 40px;
    position: relative;
    z-index: 1;
    border: 5px solid white;
