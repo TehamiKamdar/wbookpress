@@ -368,7 +368,26 @@ body {
       display: none;
    }
 }
+/* New CSS to enable hover dropdown on large screens */
+@media (min-width: 992px) {
+    .dropdown-hover:hover > .dropdown-menu {
+        display: block;
+        margin-top: 0;
+    }
 
+    .dropdown-hover > .dropdown-toggle::after {
+        display: none;
+    }
+}
+
+/* New CSS to add internal scroll to dropdown on small screens */
+@media (max-width: 992px) {
+    .offcanvas-menu .dropdown-menu {
+      overflow: hidden;
+        max-height: 300px;
+        overflow-y: auto;
+    }
+}
 /* 💻 Large Screens (≥993px) */
 @media (min-width: 993px) {
    .dropdown-menu {

@@ -88,3 +88,22 @@ $(document).ready(function () {
         }
     });
 });
+document.addEventListener("DOMContentLoaded", function () {
+    const dropdownToggles = document.querySelectorAll('.dropdown-hover .dropdown-toggle');
+    const mediaQuery = window.matchMedia('(min-width: 992px)');
+
+    function handleMediaQuery(e) {
+        dropdownToggles.forEach(toggle => {
+            if (e.matches) {
+                // Desktop: remove click-related attributes
+                toggle.removeAttribute('data-bs-toggle');
+            } else {
+                // Mobile: add click-related attributes
+                toggle.setAttribute('data-bs-toggle', 'dropdown');
+            }
+        });
+    }
+
+    handleMediaQuery(mediaQuery);
+    mediaQuery.addEventListener('change', handleMediaQuery);
+});
