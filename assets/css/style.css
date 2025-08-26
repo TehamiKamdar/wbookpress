@@ -64,7 +64,7 @@ body {
 .nav-link {
    color: white !important;
    font-weight: 500;
-   margin: 0 1.5rem;
+   margin: 0.5rem 1.5rem;
    padding: 2px !important;
    position: relative;
    transition: all 0.3s ease;
@@ -118,13 +118,17 @@ body {
    color: var(--btn-primary-color);
    border: 1px solid var(--btn-border-color);
    font-weight: 600;
+   margin-top: 0.25rem;
 }
 
 .navbar .btn-primary:hover {
    background-color: var(--primary-dark-color);
    color: white;
    border-color: var(--btn-primary-color);
-}/* Off-Canvas Menu & Backdrop */
+   box-shadow: 0 5px 15px rgba(253, 184, 8, 0.4);
+}
+
+/* Off-Canvas Menu & Backdrop */
 @media (max-width: 992px) {
     /* Style for the sliding menu */
     .offcanvas-menu {
@@ -1080,8 +1084,8 @@ body {
 
 .books-grid {
    display: grid;
-   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-   gap: 30px;
+   grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+   gap: 20px;
 }
 
 .book-card {
@@ -1102,7 +1106,7 @@ body {
 }
 
 .book-cover {
-   height: 380px;
+   height: 450px;
    overflow: hidden;
    position: relative;
 }
