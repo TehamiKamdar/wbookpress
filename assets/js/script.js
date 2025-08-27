@@ -75,17 +75,12 @@ $(document).ready(function () {
         loop: true,
         margin: 10,
         nav: true,
-        responsive: {
-            0: {
-                items: 1
-            },
-            600: {
-                items: 1
-            },
-            1000: {
-                items: 2
-            }
-        }
+        items: 1,
+        autoplay: true,
+        autoplayTimeout: 3000,
+        smartSpeed: 800,
+        animateOut: 'fadeOut',
+        animateIn: 'zoomIn' 
     });
 });
 document.addEventListener("DOMContentLoaded", function () {
@@ -175,4 +170,10 @@ document.addEventListener("DOMContentLoaded", function () {
     // Initially hide typing indicator
     $('.bot-typing').hide();
 
+        AOS.init({
+            duration: 1000,
+            easing: 'ease-in-out',
+            once: true,
+            mirror: false
+        });
 });
