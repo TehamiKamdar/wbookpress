@@ -61,12 +61,12 @@ $(document).ready(function () {
         const $icon = $(this).find('i');
         if ($icon.hasClass('ri-heart-line')) {
             $icon.removeClass('ri-heart-line')
-                 .addClass('ri-heart-fill')
-                 .css('color', '#fd5656');
+                .addClass('ri-heart-fill')
+                .css('color', '#fd5656');
         } else {
             $icon.removeClass('ri-heart-fill')
-                 .addClass('ri-heart-line')
-                 .css('color', '');
+                .addClass('ri-heart-line')
+                .css('color', '');
         }
     });
 
@@ -106,4 +106,72 @@ document.addEventListener("DOMContentLoaded", function () {
 
     handleMediaQuery(mediaQuery);
     mediaQuery.addEventListener('change', handleMediaQuery);
+
+
+    // Toggle chat window
+    $('.chatbot-icon').click(function () {
+        $('.chat-window').toggleClass('active');
+    });
+
+    // Close chat window
+    $('.close-btn').click(function (e) {
+        e.stopPropagation();
+        $('.chat-window').removeClass('active');
+    });
+
+    // Send message function (basic implementation)
+    $('.send-btn').click(sendMessage);
+    $('.chat-input input').keypress(function (e) {
+        if (e.which === 13) {
+            sendMessage();
+        }
+    });
+
+    function sendMessage() {
+        const input = $('.chat-input input');
+        const message = input.val().trim();
+
+        if (message !== '') {
+            // Add user message (insert before typing indicator)
+            const timestamp = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+            $(`
+            <div class="message user-message">
+                <div>${message}</div>
+                <div class="timestamp">${timestamp}</div>
+            </div>
+        `).insertBefore('.bot-typing');
+
+            // Clear input
+            input.val('');
+
+            // Scroll to bottom
+            $('.chat-messages').scrollTop($('.chat-messages')[0].scrollHeight);
+
+            // Show bot is typing
+            $('.bot-typing').show();
+
+            // Simulate bot response after a delay
+            setTimeout(function () {
+                $('.bot-typing').hide();
+
+                // Add bot response (again before typing indicator)
+                $(`
+                <div class="message bot-message">
+                    <div>Thanks for your message. This is a static demo. Real functionality would be implemented with JavaScript.</div>
+                    <div class="timestamp">${new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}</div>
+                </div>
+            `).insertBefore('.bot-typing');
+
+                // Scroll to bottom again
+                $('.chat-messages').scrollTop($('.chat-messages')[0].scrollHeight);
+            }, 1500);
+        }
+    }
+
+    // Initially hide typing indicator
+    $('.bot-typing').hide();
+
+
+    // Initially hide typing indicator
+    $('.bot-typing').hide();
 });
