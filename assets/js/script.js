@@ -127,6 +127,11 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
+    function scrollToBottom() {
+        const messages = $('.chat-messages');
+        messages.scrollTop(messages[0].scrollHeight);
+    }
+
     function sendMessage() {
         const input = $('.chat-input input');
         const message = input.val().trim();
@@ -141,20 +146,20 @@ document.addEventListener("DOMContentLoaded", function () {
             </div>
         `).insertBefore('.bot-typing');
 
+            scrollToBottom();
+
             // Clear input
             input.val('');
 
-            // Scroll to bottom
-            $('.chat-messages').scrollTop($('.chat-messages')[0].scrollHeight);
-
             // Show bot is typing
             $('.bot-typing').show();
+            scrollToBottom();
 
             // Simulate bot response after a delay
             setTimeout(function () {
                 $('.bot-typing').hide();
 
-                // Add bot response (again before typing indicator)
+                // Add bot response
                 $(`
                 <div class="message bot-message">
                     <div>Thanks for your message. This is a static demo. Real functionality would be implemented with JavaScript.</div>
@@ -162,8 +167,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 </div>
             `).insertBefore('.bot-typing');
 
-                // Scroll to bottom again
-                $('.chat-messages').scrollTop($('.chat-messages')[0].scrollHeight);
+                scrollToBottom();
             }, 1500);
         }
     }
@@ -171,7 +175,4 @@ document.addEventListener("DOMContentLoaded", function () {
     // Initially hide typing indicator
     $('.bot-typing').hide();
 
-
-    // Initially hide typing indicator
-    $('.bot-typing').hide();
 });
