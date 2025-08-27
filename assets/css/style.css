@@ -2112,17 +2112,19 @@ body {
 }
 
 /* BookPress Hero Section - Namespaced to prevent conflicts */
-.bp-hero {
+.bp-about-hero {
   font-family: "Raleway", sans-serif;
   position: relative;
-  height: 100vh;
-  min-height: 600px;
+  height: 70vh;
+  min-height: 500px;
   overflow: hidden;
   display: flex;
   align-items: center;
+  justify-content: center;
+  text-align: center;
 }
 
-.bp-hero .bp-background-container {
+.bp-about-hero .bp-background-container {
   position: absolute;
   top: 0;
   left: 0;
@@ -2131,17 +2133,16 @@ body {
   z-index: 1;
 }
 
-.bp-hero .bp-background-image {
+.bp-about-hero .bp-background-image {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  opacity: 0.3;
 }
 
-.bp-hero .bp-background-overlay {
+.bp-about-hero .bp-background-overlay {
   position: absolute;
   top: 0;
   left: 0;
@@ -2149,31 +2150,19 @@ body {
   height: 100%;
   background-color: #1a1229;
   /* Secondary color */
-  opacity: 0.85;
+  opacity: 0.8;
 }
 
-.bp-hero .bp-content-container {
+.bp-about-hero .bp-content-container {
   position: relative;
   z-index: 2;
   color: #f8f8f8;
   /* Light color */
   padding: 0 2rem;
+  max-width: 800px;
 }
 
-.bp-hero .bp-badge {
-  display: inline-block;
-  background-color: #fdb808;
-  /* Primary color */
-  color: #272727;
-  /* Dark color */
-  padding: 0.5rem 1.2rem;
-  border-radius: 30px;
-  font-weight: 600;
-  margin-bottom: 1.5rem;
-  font-size: 0.9rem;
-}
-
-.bp-hero .bp-main-heading {
+.bp-about-hero .bp-main-heading {
   font-size: 3.5rem;
   font-weight: 800;
   margin-bottom: 1.5rem;
@@ -2181,25 +2170,18 @@ body {
   line-height: 1.2;
 }
 
-.bp-hero .bp-main-heading span {
+.bp-about-hero .bp-main-heading span {
   color: #fdb808;
   /* Primary color */
 }
 
-.bp-hero .bp-subheading {
+.bp-about-hero .bp-description {
   font-size: 1.3rem;
+  line-height: 1.7;
   margin-bottom: 2rem;
-  max-width: 600px;
-  line-height: 1.6;
 }
 
-.bp-hero .bp-btn-container {
-  display: flex;
-  gap: 1rem;
-  flex-wrap: wrap;
-}
-
-.bp-hero .bp-btn {
+.bp-about-hero .bp-btn {
   padding: 0.9rem 2rem;
   border-radius: 8px;
   font-weight: 600;
@@ -2208,9 +2190,6 @@ body {
   align-items: center;
   gap: 0.5rem;
   transition: all 0.3s ease;
-}
-
-.bp-hero .bp-btn-primary {
   background-color: #fdb808;
   /* Primary color */
   color: #272727;
@@ -2218,7 +2197,7 @@ body {
   border: 2px solid #272727;
 }
 
-.bp-hero .bp-btn-primary:hover {
+.bp-about-hero .bp-btn:hover {
   background-color: #705000;
   /* Primary dark color */
   color: #f8f8f8;
@@ -2227,110 +2206,13 @@ body {
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
 }
 
-.bp-hero .bp-btn-secondary {
-  background-color: transparent;
-  color: #f8f8f8;
-  /* Light color */
-  border: 2px solid #fdb808;
-  /* Primary color */
-}
-
-.bp-hero .bp-btn-secondary:hover {
-  background-color: #fdb808;
-  /* Primary color */
-  color: #272727;
-  /* Dark color */
-  transform: translateY(-3px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
-}
-
-.bp-hero .bp-feature-list {
-  margin-top: 3rem;
-  display: flex;
-  gap: 2rem;
-  flex-wrap: wrap;
-}
-
-.bp-hero .bp-feature-item {
-  display: flex;
-  align-items: center;
-  gap: 0.8rem;
-}
-
-.bp-hero .bp-feature-icon {
-  width: 40px;
-  height: 40px;
-  background-color: rgba(253, 184, 8, 0.2);
-  /* Primary color with opacity */
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #fdb808;
-  /* Primary color */
-  font-size: 1.2rem;
-}
-
-.bp-hero .bp-feature-text {
-  font-weight: 500;
-}
-
-/* Scroll down indicator */
-.bp-hero .bp-scroll-down {
-  position: absolute;
-  bottom: 30px;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 2;
-  color: #f8f8f8;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.5rem;
-  text-decoration: none;
-}
-
-.bp-hero .bp-scroll-down i {
-  font-size: 1.5rem;
-  color: #fdb808;
-  animation: bounce 2s infinite;
-}
-
-@keyframes bounce {
-
-  0%,
-  20%,
-  50%,
-  80%,
-  100% {
-    transform: translateY(0);
-  }
-
-  40% {
-    transform: translateY(-10px);
-  }
-
-  60% {
-    transform: translateY(-5px);
-  }
-}
-
 @media (max-width: 768px) {
-  .bp-hero .bp-main-heading {
+  .bp-about-hero .bp-main-heading {
     font-size: 2.5rem;
   }
 
-  .bp-hero .bp-subheading {
+  .bp-about-hero .bp-description {
     font-size: 1.1rem;
-  }
-
-  .bp-hero .bp-btn {
-    padding: 0.8rem 1.5rem;
-  }
-
-  .bp-hero .bp-feature-list {
-    flex-direction: column;
-    gap: 1rem;
   }
 }
 
@@ -2494,5 +2376,180 @@ body {
 
   .bp-about .bp-floating-img {
     display: none;
+  }
+}
+
+/* BookPress Contact Page - Namespaced to prevent conflicts */
+.bp-contact {
+  font-family: "Raleway", sans-serif;
+  color: #272727;
+  background-color: #f8f8f8;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Hero Section */
+.bp-contact-hero {
+  position: relative;
+  height: 40vh;
+  min-height: 300px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.bp-contact-hero .bp-background-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.bp-contact-hero .bp-background-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.bp-contact-hero .bp-background-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #1a1229;
+  /* Secondary color */
+  opacity: 0.8;
+}
+
+.bp-contact-hero .bp-content-container {
+  position: relative;
+  z-index: 2;
+  color: #f8f8f8;
+  padding: 0 2rem;
+  max-width: 800px;
+}
+
+.bp-contact-hero .bp-main-heading {
+  font-size: 2.8rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+  color: #f8f8f8;
+}
+
+.bp-contact-hero .bp-main-heading span {
+  color: #fdb808;
+  /* Primary color */
+}
+
+.bp-contact-hero .bp-subheading {
+  font-size: 1.1rem;
+  opacity: 0.9;
+}
+
+/* Contact Form Section */
+.bp-contact-form-section {
+  padding: 4rem 0;
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+}
+
+.bp-contact-form-container {
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  padding: 3rem;
+  max-width: 800px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.bp-form-heading {
+  color: #1a1229;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  position: relative;
+  padding-bottom: 1rem;
+  text-align: center;
+}
+
+.bp-form-heading:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 4px;
+  background-color: #fdb808;
+}
+
+.bp-form-group {
+  margin-bottom: 1.5rem;
+}
+
+.bp-form-label {
+  font-weight: 600;
+  color: #1a1229;
+  margin-bottom: 0.5rem;
+}
+
+.bp-form-control {
+  border: 2px solid #e2e2e2;
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  transition: all 0.3s ease;
+}
+
+.bp-form-control:focus {
+  border-color: #fdb808;
+  box-shadow: 0 0 0 0.25rem rgba(253, 184, 8, 0.25);
+}
+
+.bp-form-btn {
+  background-color: #fdb808;
+  color: #272727;
+  border: 2px solid #272727;
+  font-weight: 600;
+  padding: 0.8rem 2rem;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  width: 100%;
+  margin-top: 1rem;
+}
+
+.bp-form-btn:hover {
+  background-color: #705000;
+  color: #f8f8f8;
+  transform: translateY(-3px);
+}
+
+.bp-form-footer {
+  text-align: center;
+  margin-top: 2rem;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+  .bp-contact-hero .bp-main-heading {
+    font-size: 2.2rem;
+  }
+
+  .bp-contact-form-container {
+    padding: 2rem;
+  }
+
+  .bp-contact-hero {
+    height: 30vh;
   }
 }
