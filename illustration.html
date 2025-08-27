@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>W-Book Press</title>
+  <!-- Bootstrap CSS -->
+  <link href="assets/lib/bootstrap/bootstrap.min.css" rel="stylesheet">
+  <!-- Remix Icons -->
+  <link href="assets/lib/remixicons/remixicon.css" rel="stylesheet">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <!-- AOS CSS -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <!-- Fonts API -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
+  <!-- Owl Carousel -->
+  <link rel="stylesheet" href="assets/lib/owlcarousel/owl.carousel.min.css">
+  <link rel="stylesheet" href="assets/lib/owlcarousel/owl.theme.default.min.css">
+</head>
+
+<body>
+  <!-- Navigation Menu -->
+  <nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container">
+      <a class="navbar-brand" href="#">
+        <i class="ri-book-open-line"></i> W-BookPress
+      </a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#navbarContent"
+        aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="navbar-collapse offcanvas-menu" id="navbarContent">
+        <button class="btn-close text-reset d-lg-none" type="button" data-bs-dismiss="offcanvas"
+          aria-label="Close"></button>
+        <div class="offcanvas-content">
+          <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item dropdown dropdown-hover">
+              <a class="nav-link active" href="#" id="servicesDropdown" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                Services <i class="ri-arrow-down-s-line"></i>
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="servicesDropdown">
+                <div class="row">
+                  <div class="col-md-4 dropdown-col">
+                    <h5 class="dropdown-header">
+                      <i class="ri-pencil-ruler-line"></i> Writing & Editing
+                    </h5>
+                    <a class="dropdown-item" href="book-writing.html">
+                      <i class="ri-arrow-right-s-line"></i> Book Writing
+                    </a>
+                    <a class="dropdown-item" href="book-editing.html">
+                      <i class="ri-arrow-right-s-line"></i> Book Editing
+                    </a>
+                    <a class="dropdown-item" href="cover-design.html">
+                      <i class="ri-arrow-right-s-line"></i> Cover Design
+                    </a>
+                  </div>
+                  <div class="col-md-4 dropdown-col">
+                    <h5 class="dropdown-header">
+                      <i class="ri-megaphone-line"></i> Publishing & Marketing
+                    </h5>
+                    <a class="dropdown-item active" href="illustration.html">
+                      <i class="ri-arrow-right-s-line"></i> Illustration
+                    </a>
+                    <a class="dropdown-item" href="self-publishing.html">
+                      <i class="ri-arrow-right-s-line"></i> Self Publishing
+                    </a>
+                    <a class="dropdown-item" href="book-marketing.html">
+                      <i class="ri-arrow-right-s-line"></i> Book Marketing
+                    </a>
+                    <a class="dropdown-item" href="book-formatting.html">
+                      <i class="ri-arrow-right-s-line"></i> Book Formatting
+                    </a>
+                  </div>
+                  <div class="col-md-4 dropdown-col">
+                    <h5 class="dropdown-header">
+                      <i class="ri-global-line"></i> Digital Presence & Content
+                    </h5>
+                    <a class="dropdown-item" href="author-website.html">
+                      <i class="ri-arrow-right-s-line"></i> Author Website
+                    </a>
+                    <a class="dropdown-item" href="script-writing.html">
+                      <i class="ri-arrow-right-s-line"></i> Script Writing
+                    </a>
+                    <a class="dropdown-item" href="blog-writing.html">
+                      <i class="ri-arrow-right-s-line"></i> Blog Writing
+                    </a>
+                    <a class="dropdown-item" href="article-writing.html">
+                      <i class="ri-arrow-right-s-line"></i> Article Writing
+                    </a>
+                  </div>
+                </div>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">About
+                Us</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Contact Us</a>
+            </li>
+          </ul>
+
+          <div class="d-flex d-lg-block mt-auto mt-lg-0">
+            <a href="#" class="btn btn-primary px-4 w-100" data-bs-toggle="modal" data-bs-target="#exampleModal">Get a
+              Quote</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <div class="service-page">
+    <!-- Hero Banner -->
+    <section class="service-hero">
+      <div class="container">
+        <nav aria-label="breadcrumb" class="service-breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="#">Home</a></li>
+            <li class="breadcrumb-item"><a href="#">Services</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Illustration</li>
+          </ol>
+        </nav>
+        <div class="row">
+          <div class="col-lg-8 mx-auto text-center">
+            <h1 class="display-4 fw-bold mb-4" data-aos="fade-up">Professional Illustration Services</h1>
+            <p class="lead mb-4" data-aos="fade-up" data-aos-delay="100">Lorem ipsum dolor sit amet consectetur
+              adipisicing elit. Similique dolores a voluptas maiores aliquid iste dolorem laudantium cupiditate
+              aspernatur assumenda!</p>
+            <a href="#" class="btn btn-hero-primary btn-lg px-4" data-bs-toggle="modal" data-bs-target="#exampleModal" data-aos="fade-up" data-aos-delay="200">Get
+              Started Today</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Service Section 1 -->
+    <section class="service-section">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-6" data-aos="fade-right">
+            <img
+              src="https://images.unsplash.com/photo-1544947950-fa07a98d237f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+              alt="Book Writing Process" class="img-fluid service-img">
+          </div>
+          <div class="col-lg-6" data-aos="fade-left">
+            <div class="service-content">
+              <div class="service-icon-box">
+                <i class="ri-pencil-line"></i>
+              </div>
+              <h2 class="service-title">Comprehensive Book Writing</h2>
+              <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eum placeat quod obcaecati eaque nihil!
+                Numquam, recusandae consequuntur! In architecto omnis accusamus eos nobis accusantium modi doloribus
+                repellendus voluptate, aut facilis.</p>
+
+              <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eum placeat quod obcaecati eaque nihil!
+                Numquam, recusandae consequuntur! In architecto omnis accusamus eos nobis accusantium modi doloribus
+                repellendus voluptate, aut facilis.</p>
+
+              <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eum placeat quod obcaecati eaque nihil!
+                Numquam, recusandae consequuntur! In architecto omnis accusamus eos nobis accusantium modi doloribus
+                repellendus voluptate, aut facilis.</p>
+
+              <a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">Learn More <i
+                  class="ri-arrow-right-line"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Service Section 2 -->
+    <section class="service-section bg-light">
+      <div class="container">
+        <div class="row align-items-center flex-row-reverse">
+          <div class="col-lg-6" data-aos="fade-left">
+            <img
+              src="https://images.unsplash.com/photo-1455390582262-044cdead277a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+              alt="Genre Specialization" class="img-fluid service-img">
+          </div>
+          <div class="col-lg-6" data-aos="fade-right">
+            <div class="service-content">
+              <div class="service-icon-box">
+                <i class="ri-book-open-line"></i>
+              </div>
+              <h2 class="service-title">Genre Specialization</h2>
+              <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eum placeat quod obcaecati eaque nihil!
+                Numquam, recusandae consequuntur! In architecto omnis accusamus eos nobis accusantium modi doloribus
+                repellendus voluptate, aut facilis.</p>
+
+              <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eum placeat quod obcaecati eaque nihil!
+                Numquam, recusandae consequuntur! In architecto omnis accusamus eos nobis accusantium modi doloribus
+                repellendus voluptate, aut facilis.</p>
+
+              <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eum placeat quod obcaecati eaque nihil!
+                Numquam, recusandae consequuntur! In architecto omnis accusamus eos nobis accusantium modi doloribus
+                repellendus voluptate, aut facilis.</p>
+
+              <a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">Learn More <i
+                  class="ri-arrow-right-line"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Service Section 3 -->
+    <section class="service-section">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-6" data-aos="fade-right">
+            <img
+              src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+              alt="Collaborative Process" class="img-fluid service-img">
+          </div>
+          <div class="col-lg-6" data-aos="fade-left">
+            <div class="service-content">
+              <div class="service-icon-box">
+                <i class="ri-team-line"></i>
+              </div>
+              <h2 class="service-title">Collaborative Process</h2>
+              <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eum placeat quod obcaecati eaque nihil!
+                Numquam, recusandae consequuntur! In architecto omnis accusamus eos nobis accusantium modi doloribus
+                repellendus voluptate, aut facilis.</p>
+
+              <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eum placeat quod obcaecati eaque nihil!
+                Numquam, recusandae consequuntur! In architecto omnis accusamus eos nobis accusantium modi doloribus
+                repellendus voluptate, aut facilis.</p>
+
+              <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eum placeat quod obcaecati eaque nihil!
+                Numquam, recusandae consequuntur! In architecto omnis accusamus eos nobis accusantium modi doloribus
+                repellendus voluptate, aut facilis.</p>
+
+              <a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">Learn More <i
+                  class="ri-arrow-right-line"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- Modal -->
+  <div class="modal fade custom-modal" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">
+            <i class="ri-quill-pen-line"></i> Get in Touch
+          </h5>
+          <button type="button" class="bg-danger btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="mb-3">
+              <label for="name" class="form-label">Your Name</label>
+              <input type="text" class="form-control" id="name" placeholder="Enter your full name">
+            </div>
+            <div class="mb-3">
+              <label for="email" class="form-label">Email Address</label>
+              <input type="email" class="form-control" id="email" placeholder="Enter your email">
+            </div>
+            <div class="mb-3">
+              <label for="phone" class="form-label">Phone Number</label>
+              <input type="tel" class="form-control" id="phone" placeholder="Enter your phone number">
+            </div>
+            <div class="mb-3">
+              <label for="message" class="form-label">Message</label>
+              <textarea class="form-control" id="message" rows="4" placeholder="Tell us about your project"></textarea>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-custom-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-custom-primary">Submit</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Trusted Partners Section -->
+  <section class="partners-section">
+    <div class="container">
+      <div class="section-title" data-aos="fade-up" data-aos-duration="1000">
+        <h2>Our Trusted Partners</h2>
+        <p>We collaborate with industry leaders and innovative brands to bring you the best content and reading
+          experience.</p>
+      </div>
+
+      <div class="partners-carousel" data-aos="fade-up" data-aos-duration="1000">
+        <div class="carousel-track">
+          <!-- Partner 1 -->
+          <div class="partner-item" data-aos="zoom-in" data-aos-delay="100">
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Medium_logo_Monogram.svg/1200px-Medium_logo_Monogram.svg.png"
+              alt="Medium" class="brand-partner">
+          </div>
+          <!-- Partner 2 -->
+          <div class="partner-item" data-aos="zoom-in" data-aos-delay="200">
+            <img src="https://static.cdnlogo.com/logos/d/56/dribbble-icon.svg" alt="Dribbble" class="brand-partner">
+          </div>
+          <!-- Partner 3 -->
+          <div class="partner-item" data-aos="zoom-in" data-aos-delay="300">
+            <img src="https://cdn.worldvectorlogo.com/logos/forbes-2.svg" alt="Forbes" class="brand-partner">
+          </div>
+          <!-- Partner 4 -->
+          <div class="partner-item" data-aos="zoom-in" data-aos-delay="400">
+            <img src="https://static.cdnlogo.com/logos/t/76/the-new-york-times.svg" alt="New York Times"
+              class="brand-partner">
+          </div>
+          <!-- Partner 5 -->
+          <div class="partner-item" data-aos="zoom-in" data-aos-delay="500">
+            <img src="https://static.cdnlogo.com/logos/p/74/penguin-books.svg" alt="Penguin Books"
+              class="brand-partner">
+          </div>
+          <!-- Partner 6 -->
+          <div class="partner-item" data-aos="zoom-in" data-aos-delay="600">
+            <img src="https://static.cdnlogo.com/logos/a/9/amazon-kindle.svg" alt="Kindle" class="brand-partner">
+          </div>
+          <!-- Partner 7 -->
+          <div class="partner-item" data-aos="zoom-in" data-aos-delay="700">
+            <img src="https://static.cdnlogo.com/logos/a/14/audible.svg" alt="Audible" class="brand-partner">
+          </div>
+        </div>
+      </div>
+
+      <div class="divider" data-aos="fade-up"></div>
+
+      <div class="owl-carousel owl-theme">
+        <div class="testimonial">
+          <div class="testimonial-content">"Working with WBookPress has transformed our content distribution. Their
+            innovative approach and author-friendly policies make them an ideal partner for publishers and writers
+            alike."</div>
+          <p class="testimonial-author">— Sarah Johnson, CEO of Penguin Books</p>
+        </div>
+
+        <div class="testimonial">
+          <div class="testimonial-content">"WBookPress gave my novel the global reach I dreamed of. Their tools are
+            simple yet powerful."</div>
+          <p class="testimonial-author">— Daniel Carter, Author of *The Silent Sky*</p>
+        </div>
+
+        <div class="testimonial">
+          <div class="testimonial-content">"As a small publisher, we needed an affordable solution. WBookPress made
+            e-book publishing seamless and profitable."</div>
+          <p class="testimonial-author">— Priya Mehta, Founder of Lotus Reads</p>
+        </div>
+
+        <div class="testimonial">
+          <div class="testimonial-content">"The analytics dashboard is a game changer. With WBookPress, I finally
+            understand my readers better."</div>
+          <p class="testimonial-author">— Ahmed Khan, Independent Author</p>
+        </div>
+
+        <div class="testimonial">
+          <div class="testimonial-content">"WBookPress isn’t just a platform — it’s a supportive community for
+            writers and publishers alike."</div>
+          <p class="testimonial-author">— Laura Martinez, Literary Agent</p>
+        </div>
+
+        <div class="testimonial">
+          <div class="testimonial-content">"Switching to WBookPress cut our distribution time in half. Their
+            technology is ahead of the curve."</div>
+          <p class="testimonial-author">— Michael Roberts, Editor-in-Chief, BrightPage Publishing</p>
+        </div>
+
+        <div class="testimonial">
+          <div class="testimonial-content">"My students love accessing curated e-books through WBookPress. It has
+            made digital learning so much smoother."</div>
+          <p class="testimonial-author">— Dr. Emily Chen, Professor of Literature</p>
+        </div>
+
+        <div class="testimonial">
+          <div class="testimonial-content">"From manuscript upload to sales tracking, everything is effortless with
+            WBookPress."</div>
+          <p class="testimonial-author">— Jonathan Lee, Self-Published Author</p>
+        </div>
+
+        <div class="testimonial">
+          <div class="testimonial-content">"The royalty transparency on WBookPress is unmatched. I know exactly
+            where my earnings come from."</div>
+          <p class="testimonial-author">— Sophia Williams, Poet</p>
+        </div>
+
+        <div class="testimonial">
+          <div class="testimonial-content">"WBookPress has redefined digital publishing for us. It’s reliable,
+            fast, and author-first."</div>
+          <p class="testimonial-author">— Richard Allen, Publishing Director, Global Reads</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Our Books Section -->
+  <section class="book-catalog">
+    <div class="container">
+      <div class="section-title">
+        <h2>Browse Our Collection</h2>
+        <p>Discover books from various genres to satisfy your reading needs</p>
+      </div>
+
+      <div class="category-filter">
+        <button class="category-btn active" data-category="all">All Books</button>
+        <button class="category-btn" data-category="fiction">Fiction</button>
+        <button class="category-btn" data-category="non-fiction">Non-Fiction</button>
+        <button class="category-btn" data-category="business">Business</button>
+        <button class="category-btn" data-category="self-help">Self-Help</button>
+        <button class="category-btn" data-category="technology">Technology</button>
+      </div>
+
+      <div class="books-grid">
+        <!-- Book 1 -->
+        <div class="book-card" data-category="fiction" data-aos="fade-up" data-aos-delay="100">
+          <div class="book-cover">
+            <img src="https://images.unsplash.com/photo-1544947950-fa07a98d237f?auto=format&fit=crop&w=600&q=80"
+              alt="The Great Novel">
+            <span class="book-badge">Bestseller</span>
+          </div>
+        </div>
+
+        <!-- Book 2 -->
+        <div class="book-card" data-category="non-fiction" data-aos="fade-up" data-aos-delay="200">
+          <div class="book-cover">
+            <img src="https://images.unsplash.com/photo-1532012197267-da84d127e765?auto=format&fit=crop&w=600&q=80"
+              alt="Deep History">
+            <span class="book-badge">New</span>
+          </div>
+        </div>
+
+        <!-- Book 3 -->
+        <div class="book-card" data-category="business" data-aos="fade-up" data-aos-delay="300">
+          <div class="book-cover">
+            <img src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=600&q=80"
+              alt="Startup Success">
+          </div>
+        </div>
+
+        <!-- Book 4 -->
+        <div class="book-card" data-category="self-help" data-aos="fade-up" data-aos-delay="400">
+          <div class="book-cover">
+            <img src="https://images.unsplash.com/photo-1667408521317-bef962a97098?auto=format&fit=crop&w=435&q=80"
+              alt="Filosofi Teras">
+          </div>
+        </div>
+
+        <!-- Book 5 -->
+        <div class="book-card" data-category="technology" data-aos="fade-up" data-aos-delay="500">
+          <div class="book-cover">
+            <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=600&q=80"
+              alt="Coding Mastery">
+            <span class="book-badge">Sale</span>
+          </div>
+        </div>
+
+        <!-- Book 6 -->
+        <div class="book-card" data-category="fiction" data-aos="fade-up" data-aos-delay="600">
+          <div class="book-cover">
+            <img src="https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&w=600&q=80"
+              alt="Mystery of the Night">
+          </div>
+        </div>
+
+        <!-- Book 7 -->
+        <div class="book-card" data-category="fiction" data-aos="fade-up" data-aos-delay="700">
+          <div class="book-cover">
+            <img src="https://images.unsplash.com/photo-1621351183012-e2f9972dd9bf?auto=format&fit=crop&w=435&q=80"
+              alt="The Two Towers">
+          </div>
+        </div>
+
+        <!-- Book 8 -->
+        <div class="book-card" data-category="fiction" data-aos="fade-up" data-aos-delay="800">
+          <div class="book-cover">
+            <img src="https://images.unsplash.com/photo-1629992101753-56d196c8aabb?auto=format&fit=crop&w=390&q=80"
+              alt="The Chronicles of Narnia">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Chatbot Container -->
+  <div class="chatbot-container">
+    <!-- Chat Window -->
+    <div class="chat-window">
+      <div class="chat-header">
+        <h5>Customer Support</h5>
+        <button class="close-btn">
+          <i class="ri-close-line"></i>
+        </button>
+      </div>
+      <div class="chat-messages">
+        <div class="message bot-message">
+          <div>Hello! How can I help you today?</div>
+          <div class="timestamp">10:30 AM</div>
+        </div>
+        <div class="message user-message">
+          <div>I have a question about my order.</div>
+          <div class="timestamp">10:31 AM</div>
+        </div>
+        <div class="message bot-message">
+          <div>Sure, I'd be happy to help. Could you please provide your order ID?</div>
+          <div class="timestamp">10:31 AM</div>
+        </div>
+        <div class="bot-typing">
+          <span>Bot is typing</span>
+          <div class="typing-dots">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </div>
+      </div>
+      <div class="chat-input">
+        <input type="text" placeholder="Type your message...">
+        <button class="send-btn">
+          <i class="ri-send-plane-fill"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Chatbot Icon -->
+    <div class="chatbot-icon">
+      <i class="ri-chat-smile-3-line"></i>
+    </div>
+  </div>
+
+  <!-- Footer Section -->
+  <footer class="footer">
+    <div class="container">
+      <div class="row">
+        <!-- Brand Details Section -->
+        <div class="col-lg-4 col-md-6 footer-section">
+          <div class="brand-logo">W-BookPress</div>
+          <div class="brand-info">
+            <p>W-BookPress is a premier publishing platform helping authors transform their manuscripts into
+              professionally published books. We provide end-to-end solutions from editing to distribution.</p>
+            <p>Our mission is to empower writers and make publishing accessible to everyone.</p>
+          </div>
+          <div class="social-icons">
+            <a href="#"><i class="ri-facebook-fill"></i></a>
+            <a href="#"><i class="ri-twitter-fill"></i></a>
+            <a href="#"><i class="ri-instagram-line"></i></a>
+            <a href="#"><i class="ri-linkedin-fill"></i></a>
+            <a href="#"><i class="ri-youtube-line"></i></a>
+          </div>
+        </div>
+
+        <!-- Quick Links Section -->
+        <div class="col-lg-2 col-md-6 footer-section">
+          <h4 class="footer-title">Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="#"><i class="ri-arrow-right-s-line"></i> Home</a></li>
+            <li><a href="#"><i class="ri-arrow-right-s-line"></i> About Us</a></li>
+            <li><a href="#"><i class="ri-arrow-right-s-line"></i> Services</a></li>
+            <li><a href="#"><i class="ri-arrow-right-s-line"></i> Pricing</a></li>
+            <li><a href="#"><i class="ri-arrow-right-s-line"></i> Portfolio</a></li>
+          </ul>
+        </div>
+
+        <!-- More Links Section -->
+        <div class="col-lg-2 col-md-6 footer-section">
+          <h4 class="footer-title">Our Services</h4>
+          <ul class="footer-links">
+            <li><a href="#"><i class="ri-arrow-right-s-line"></i> Editing</a></li>
+            <li><a href="#"><i class="ri-arrow-right-s-line"></i> Design</a></li>
+            <li><a href="#"><i class="ri-arrow-right-s-line"></i> Publishing</a></li>
+            <li><a href="#"><i class="ri-arrow-right-s-line"></i> Marketing</a></li>
+            <li><a href="#"><i class="ri-arrow-right-s-line"></i> Distribution</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact Form Section -->
+        <div class="col-lg-4 col-md-6 footer-section">
+          <h4 class="footer-title">Get In Touch</h4>
+          <form class="footer-form">
+            <div class="mb-3">
+              <input type="text" class="form-control" placeholder="Your Name" required>
+            </div>
+            <div class="mb-3">
+              <input type="email" class="form-control" placeholder="Email Address" required>
+            </div>
+            <div class="mb-3">
+              <input type="tel" class="form-control" placeholder="Phone Number" required>
+            </div>
+            <div class="mb-3">
+              <textarea class="form-control" placeholder="Your Message" required></textarea>
+            </div>
+            <button type="submit" class="btn-footer">Send Message</button>
+          </form>
+        </div>
+      </div>
+
+      <!-- Copyright Section -->
+      <div class="row">
+        <div class="col-12">
+          <div class="copyright">
+            <p>&copy; 2023 W-BookPress. All Rights Reserved. Designed with <i class="ri-heart-fill"
+                style="color: var(--primary-color);"></i></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>
+<script src="assets/lib/jquery/jquery-3.7.1.min.js"></script>
+<script src="assets/lib/owlcarousel/owl.carousel.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="assets/js/script.js"></script>
+<!-- Bootstrap JS -->
+<script src="assets/lib/bootstrap/bootstrap.bundle.min.js"></script>
