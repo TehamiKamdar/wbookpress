@@ -331,6 +331,17 @@ body {
   color: var(--primary-dark-color);
 }
 
+/* On active → keep underline */
+.dropdown-item.active::after {
+  width: 100%;
+}
+
+/* On active → keep primary color */
+.dropdown-item.active {
+  background: none !important;
+  color: var(--primary-color) !important;
+}
+
 /* 🔽 Small Screens (<992px) */
 @media (max-width: 992px) {
   .dropdown-menu {

@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>W-Book Press</title>
+   <!-- Bootstrap CSS -->
+   <link href="assets/lib/bootstrap/bootstrap.min.css" rel="stylesheet">
+   <!-- Remix Icons -->
+   <link href="assets/lib/remixicons/remixicon.css" rel="stylesheet">
+   <!-- Custom CSS -->
+   <link rel="stylesheet" href="assets/css/style.css">
+   <!-- Fonts API -->
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet">
+   <!-- Owl Carousel -->
+   <link rel="stylesheet" href="assets/lib/owlcarousel/owl.carousel.min.css">
+   <link rel="stylesheet" href="assets/lib/owlcarousel/owl.theme.default.min.css">
+</head>
+
+<body>
+   <!-- Navigation Menu -->
+   <nav class="navbar navbar-expand-lg navbar-dark">
+      <div class="container">
+         <a class="navbar-brand" href="#">
+            <i class="ri-book-open-line"></i> W-BookPress
+         </a>
+
+         <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#navbarContent"
+            aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+         </button>
+
+         <div class="navbar-collapse offcanvas-menu" id="navbarContent">
+            <button class="btn-close text-reset d-lg-none" type="button" data-bs-dismiss="offcanvas"
+               aria-label="Close"></button>
+            <div class="offcanvas-content">
+               <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                  <li class="nav-item">
+                     <a class="nav-link" href="#">Home</a>
+                  </li>
+                  <li class="nav-item dropdown dropdown-hover">
+                     <a class="nav-link active" href="#" id="servicesDropdown" role="button" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        Services <i class="ri-arrow-down-s-line"></i>
+                     </a>
+                     <ul class="dropdown-menu" aria-labelledby="servicesDropdown">
+                        <div class="row">
+                           <div class="col-md-4 dropdown-col">
+                              <h5 class="dropdown-header">
+                                 <i class="ri-pencil-ruler-line"></i> Writing & Editing
+                              </h5>
+                              <a class="dropdown-item active" href="book-writing.html">
+                                 <i class="ri-arrow-right-s-line"></i> Book Writing
+                              </a>
+                              <a class="dropdown-item" href="book-editing.html">
+                                 <i class="ri-arrow-right-s-line"></i> Book Editing
+                              </a>
+                              <a class="dropdown-item" href="cover-design.html">
+                                 <i class="ri-arrow-right-s-line"></i> Cover Design
+                              </a>
+                           </div>
+                           <div class="col-md-4 dropdown-col">
+                              <h5 class="dropdown-header">
+                                 <i class="ri-megaphone-line"></i> Publishing & Marketing
+                              </h5>
+                              <a class="dropdown-item" href="illustration.html">
+                                 <i class="ri-arrow-right-s-line"></i> Illustration
+                              </a>
+                              <a class="dropdown-item" href="self-publishing.html">
+                                 <i class="ri-arrow-right-s-line"></i> Self Publishing
+                              </a>
+                              <a class="dropdown-item" href="book-marketing.html">
+                                 <i class="ri-arrow-right-s-line"></i> Book Marketing
+                              </a>
+                              <a class="dropdown-item" href="book-formatting.html">
+                                 <i class="ri-arrow-right-s-line"></i> Book Formatting
+                              </a>
+                           </div>
+                           <div class="col-md-4 dropdown-col">
+                              <h5 class="dropdown-header">
+                                 <i class="ri-global-line"></i> Digital Presence & Content
+                              </h5>
+                              <a class="dropdown-item" href="author-website.html">
+                                 <i class="ri-arrow-right-s-line"></i> Author Website
+                              </a>
+                              <a class="dropdown-item" href="script-writing.html">
+                                 <i class="ri-arrow-right-s-line"></i> Script Writing
+                              </a>
+                              <a class="dropdown-item" href="blog-writing.html">
+                                 <i class="ri-arrow-right-s-line"></i> Blog Writing
+                              </a>
+                              <a class="dropdown-item" href="article-writing.html">
+                                 <i class="ri-arrow-right-s-line"></i> Article Writing
+                              </a>
+                           </div>
+                        </div>
+                     </ul>
+                  </li>
+                  <li class="nav-item dropdown">
+                     <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">About
+                        Us</a>
+                  </li>
+                  <li class="nav-item">
+                     <a class="nav-link" href="#">Contact Us</a>
+                  </li>
+               </ul>
+
+               <div class="d-flex d-lg-block mt-auto mt-lg-0">
+                  <a href="#" class="btn btn-primary px-4 w-100">Get a Quote</a>
+               </div>
+            </div>
+         </div>
+      </div>
+   </nav>
+
+   <!-- Chatbot Container -->
+   <div class="chatbot-container">
+      <!-- Chat Window -->
+      <div class="chat-window">
+         <div class="chat-header">
+            <h5>Customer Support</h5>
+            <button class="close-btn">
+               <i class="ri-close-line"></i>
+            </button>
+         </div>
+         <div class="chat-messages">
+            <div class="message bot-message">
+               <div>Hello! How can I help you today?</div>
+               <div class="timestamp">10:30 AM</div>
+            </div>
+            <div class="message user-message">
+               <div>I have a question about my order.</div>
+               <div class="timestamp">10:31 AM</div>
+            </div>
+            <div class="message bot-message">
+               <div>Sure, I'd be happy to help. Could you please provide your order ID?</div>
+               <div class="timestamp">10:31 AM</div>
+            </div>
+            <div class="bot-typing">
+               <span>Bot is typing</span>
+               <div class="typing-dots">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+               </div>
+            </div>
+         </div>
+         <div class="chat-input">
+            <input type="text" placeholder="Type your message...">
+            <button class="send-btn">
+               <i class="ri-send-plane-fill"></i>
+            </button>
+         </div>
+      </div>
+
+      <!-- Chatbot Icon -->
+      <div class="chatbot-icon">
+         <i class="ri-chat-smile-3-line"></i>
+      </div>
+   </div>
+
+   <!-- Footer Section -->
+   <footer class="footer">
+      <div class="container">
+         <div class="row">
+            <!-- Brand Details Section -->
+            <div class="col-lg-4 col-md-6 footer-section">
+               <div class="brand-logo">W-BookPress</div>
+               <div class="brand-info">
+                  <p>W-BookPress is a premier publishing platform helping authors transform their manuscripts into
+                     professionally published books. We provide end-to-end solutions from editing to distribution.</p>
+                  <p>Our mission is to empower writers and make publishing accessible to everyone.</p>
+               </div>
+               <div class="social-icons">
+                  <a href="#"><i class="ri-facebook-fill"></i></a>
+                  <a href="#"><i class="ri-twitter-fill"></i></a>
+                  <a href="#"><i class="ri-instagram-line"></i></a>
+                  <a href="#"><i class="ri-linkedin-fill"></i></a>
+                  <a href="#"><i class="ri-youtube-line"></i></a>
+               </div>
+            </div>
+
+            <!-- Quick Links Section -->
+            <div class="col-lg-2 col-md-6 footer-section">
+               <h4 class="footer-title">Quick Links</h4>
+               <ul class="footer-links">
+                  <li><a href="#"><i class="ri-arrow-right-s-line"></i> Home</a></li>
+                  <li><a href="#"><i class="ri-arrow-right-s-line"></i> About Us</a></li>
+                  <li><a href="#"><i class="ri-arrow-right-s-line"></i> Services</a></li>
+                  <li><a href="#"><i class="ri-arrow-right-s-line"></i> Pricing</a></li>
+                  <li><a href="#"><i class="ri-arrow-right-s-line"></i> Portfolio</a></li>
+               </ul>
+            </div>
+
+            <!-- More Links Section -->
+            <div class="col-lg-2 col-md-6 footer-section">
+               <h4 class="footer-title">Our Services</h4>
+               <ul class="footer-links">
+                  <li><a href="#"><i class="ri-arrow-right-s-line"></i> Editing</a></li>
+                  <li><a href="#"><i class="ri-arrow-right-s-line"></i> Design</a></li>
+                  <li><a href="#"><i class="ri-arrow-right-s-line"></i> Publishing</a></li>
+                  <li><a href="#"><i class="ri-arrow-right-s-line"></i> Marketing</a></li>
+                  <li><a href="#"><i class="ri-arrow-right-s-line"></i> Distribution</a></li>
+               </ul>
+            </div>
+
+            <!-- Contact Form Section -->
+            <div class="col-lg-4 col-md-6 footer-section">
+               <h4 class="footer-title">Get In Touch</h4>
+               <form class="footer-form">
+                  <div class="mb-3">
+                     <input type="text" class="form-control" placeholder="Your Name" required>
+                  </div>
+                  <div class="mb-3">
+                     <input type="email" class="form-control" placeholder="Your Email" required>
+                  </div>
+                  <div class="mb-3">
+                     <textarea class="form-control" placeholder="Your Message" required></textarea>
+                  </div>
+                  <button type="submit" class="btn-footer">Send Message</button>
+               </form>
+            </div>
+         </div>
+
+         <!-- Copyright Section -->
+         <div class="row">
+            <div class="col-12">
+               <div class="copyright">
+                  <p>&copy; 2023 W-BookPress. All Rights Reserved. Designed with <i class="ri-heart-fill"
+                        style="color: var(--primary-color);"></i></p>
+               </div>
+            </div>
+         </div>
+      </div>
+   </footer>
+</body>
+
+</html>
+
+<script src="assets/lib/jquery/jquery-3.7.1.min.js"></script>
+<script src="assets/lib/owlcarousel/owl.carousel.min.js"></script>
+<script src="assets/js/script.js"></script>
+<!-- Bootstrap JS -->
+<script src="assets/lib/bootstrap/bootstrap.bundle.min.js"></script>
