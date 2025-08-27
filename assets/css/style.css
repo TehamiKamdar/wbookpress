@@ -35,6 +35,32 @@
   color: #f8f8f8;
 }
 
+/* Custom Scrollbar Styles */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--secondary-color);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary-color);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary-dark-color);
+}
+
+/* Firefox compatible scrollbar */
+html {
+  scrollbar-width: thin;
+  scrollbar-color: var(--primary-color) var(--secondary-color);
+}
+
 body {
   font-family: var(--font-family-primary);
   background-color: #f8f9fa;
@@ -1908,7 +1934,8 @@ body {
 .service-header {
   display: flex;
   align-items: center;
-  gap: 1rem; /* icon aur text ke beech spacing */
+  gap: 1rem;
+  /* icon aur text ke beech spacing */
 }
 
 .service-icon-box {
@@ -1919,7 +1946,8 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-shrink: 0; /* shrink na ho */
+  flex-shrink: 0;
+  /* shrink na ho */
 }
 
 .service-icon-box i {
@@ -1931,14 +1959,16 @@ body {
   color: var(--secondary-color);
   position: relative;
   padding-bottom: 0.5rem;
-  margin: 0; /* flex ke andar spacing control hoga */
+  margin: 0;
+  /* flex ke andar spacing control hoga */
 }
 
 .service-title:after {
   content: '';
   position: absolute;
   bottom: 0;
-  left: 0; /* ab heading ke start ke neeche hi rahega */
+  left: 0;
+  /* ab heading ke start ke neeche hi rahega */
   width: 80px;
   height: 4px;
   background-color: var(--primary-color);
