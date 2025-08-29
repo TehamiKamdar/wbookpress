@@ -80,7 +80,7 @@ $(document).ready(function () {
         autoplayTimeout: 3000,
         smartSpeed: 800,
         animateOut: 'fadeOut',
-        animateIn: 'zoomIn' 
+        animateIn: 'zoomIn'
     });
 });
 document.addEventListener("DOMContentLoaded", function () {
@@ -170,10 +170,26 @@ document.addEventListener("DOMContentLoaded", function () {
     // Initially hide typing indicator
     $('.bot-typing').hide();
 
-        AOS.init({
-            duration: 1000,
-            easing: 'ease-in-out',
-            once: true,
-            mirror: false
-        });
+    AOS.init({
+        duration: 1000,
+        easing: 'ease-in-out',
+        once: true,
+        mirror: false
+    });
+
+    const forms = document.querySelectorAll('.needs-validation');
+    forms.forEach(form => {
+        form.addEventListener('submit', event => {
+            if (!form.checkValidity()) {
+                event.preventDefault();
+                event.stopPropagation();
+
+                form.querySelectorAll(':invalid').forEach(el => {
+                    el.classList.add('animate__animated', 'animate__headShake');
+                    setTimeout(() => el.classList.remove('animate__animated', 'animate__headShake'), 1000);
+                });
+            }
+            form.classList.add('was-validated');
+        }, false);
+    });
 });
