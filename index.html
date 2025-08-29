@@ -142,18 +142,20 @@
             <!-- Left Content -->
             <div class="col-lg-8 hero-content" data-aos="fade-right" data-aos-duration="1000">
                <h1 class="hero-heading">
-                We’ll turn your <span>ideas</span> into a successful book
+                  We’ll turn your <span>ideas</span> into a successful book
                </h1>
                <p class="hero-subheading" data-aos="fade-up" data-aos-delay="200">
-                  We’ve helped hundreds of authors just like you to turn their ideas into successful books, even if you don't enjoy writing. We write, edit and publish your book in your voice, your style, with a guarantee, and you get 100% credit for life with no royalty attached. 
+                  We’ve helped hundreds of authors just like you to turn their ideas into successful books, even if you
+                  don't enjoy writing. We write, edit and publish your book in your voice, your style, with a guarantee,
+                  and you get 100% credit for life with no royalty attached.
                </p>
 
                <div class="hero-buttons" data-aos="zoom-in" data-aos-delay="400">
                   <button class="btn btn-hero-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                     <i class="ri-book-open-line"></i> Get your new book 
+                     <i class="ri-book-open-line"></i> Get your new book
                   </button>
                   <button class="btn btn-hero-secondary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                     <i class="ri-information-line"></i> Chat with us 
+                     <i class="ri-information-line"></i> Chat with us
                   </button>
                </div>
             </div>
@@ -529,18 +531,6 @@
             </button>
          </div>
          <div class="chat-messages">
-            <div class="message bot-message">
-               <div>Hello! How can I help you today?</div>
-               <div class="timestamp">10:30 AM</div>
-            </div>
-            <div class="message user-message">
-               <div>I have a question about my order.</div>
-               <div class="timestamp">10:31 AM</div>
-            </div>
-            <div class="message bot-message">
-               <div>Sure, I'd be happy to help. Could you please provide your order ID?</div>
-               <div class="timestamp">10:31 AM</div>
-            </div>
             <div class="bot-typing">
                <span>Bot is typing</span>
                <div class="typing-dots">
@@ -550,16 +540,20 @@
                </div>
             </div>
          </div>
-         <div class="chat-input">
-            <input type="text" placeholder="Type your message...">
-            <button class="send-btn">
-               <i class="ri-send-plane-fill"></i>
-            </button>
-         </div>
+      </div>
+
+      <!-- Hidden Contact Form Template -->
+      <div id="chatFormTemplate" style="display:none;">
+         @include('include.form')
       </div>
 
       <!-- Chatbot Icon -->
       <div class="chatbot-icon">
+         <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill text-white red-animation"
+            id="badge">
+            1
+            <span class="visually-hidden">unread messages</span>
+         </span>
          <i class="ri-chat-smile-3-line"></i>
       </div>
    </div>

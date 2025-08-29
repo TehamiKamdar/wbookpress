@@ -103,24 +103,192 @@ document.addEventListener("DOMContentLoaded", function () {
     mediaQuery.addEventListener('change', handleMediaQuery);
 
 
-    // Toggle chat window
-    $('.chatbot-icon').click(function () {
-        $('.chat-window').toggleClass('active');
-    });
-
-    // Close chat window
-    $('.close-btn').click(function (e) {
-        e.stopPropagation();
-        $('.chat-window').removeClass('active');
-    });
-
-    // Send message function (basic implementation)
-    $('.send-btn').click(sendMessage);
-    $('.chat-input input').keypress(function (e) {
-        if (e.which === 13) {
-            sendMessage();
+    // ===== Rule Graph =====
+    const RULES = {
+        start: {
+            message: "How can I help you today?",
+            options: [
+                { label: "Our Services", goto: "services" },
+                { label: "About Us", goto: "about" },
+                { label: "Contact Us", goto: "contact" }
+            ]
+        },
+        services: {
+            message: "We offer a wide range of services. Please choose a category:",
+            options: [
+                { label: "✍️ Writing & Editing", goto: "writing_editing" },
+                { label: "📢 Publishing & Marketing", goto: "publishing_marketing" },
+                { label: "🌐 Digital Presence & Content", goto: "digital_presence" },
+                { label: "Back", goto: "start" }
+            ]
+        },
+        writing_editing: {
+            message: "Our ✍️ Writing & Editing services include:",
+            options: [
+                { label: "Book Writing", goto: "book_writing" },
+                { label: "Book Editing", goto: "book_editing" },
+                { label: "Cover Design", goto: "cover_design" },
+                { label: "Back", goto: "services" }
+            ]
+        },
+        publishing_marketing: {
+            message: "Our 📢 Publishing & Marketing services include:",
+            options: [
+                { label: "Illustration", goto: "illustration" },
+                { label: "Self Publishing", goto: "self_publishing" },
+                { label: "Book Marketing", goto: "book_marketing" },
+                { label: "Book Formatting", goto: "book_formatting" },
+                { label: "Back", goto: "services" }
+            ]
+        },
+        digital_presence: {
+            message: "Our 🌐 Digital Presence & Content services include:",
+            options: [
+                { label: "Author Website", goto: "author_website" },
+                { label: "Script Writing", goto: "script_writing" },
+                { label: "Blog Writing", goto: "blog_writing" },
+                { label: "Article Writing", goto: "article_writing" },
+                { label: "Back", goto: "services" }
+            ]
+        },
+        // Example leaf nodes
+        book_writing: {
+            message: "Our Book Writing covers outline → draft → revisions. Would you like to see pricing or process?",
+            options: [
+                { label: "Pricing", goto: "generic_pricing" },
+                { label: "Process", goto: "generic_process" },
+                { label: "Back", goto: "writing_editing" }
+            ]
+        },
+        // Generic info nodes
+        generic_pricing: {
+            message: "Pricing depends on scope. Share requirements for a custom quote?",
+            options: [
+                { label: "Share Requirements", goto: "contact" },
+                { label: "Back", goto: "services" }
+            ]
+        },
+        generic_process: {
+            message: "Our process includes discovery, drafts, revisions, and delivery.",
+            options: [
+                { label: "See Portfolio", goto: "portfolio" },
+                { label: "Back", goto: "services" }
+            ]
+        },
+        about: {
+            message: "We are a complete publishing & content agency helping authors bring their stories to life.",
+            options: [
+                { label: "Back to Start", goto: "start" }
+            ]
+        },
+        contact: {
+            message: "📮 Thanks for contacting us. Click on open form to fill up your query:",
+            options: [
+                { label: "Open Form", goto: "form_trigger" },
+                { label: "Back to Start", goto: "start" }
+            ]
+        },
+        form_trigger: {
+            message: "[FORM_INCLUDED]",
+            options: [
+                { label: "Back to Start", goto: "start" }
+            ]
         }
+    };
+
+
+
+
+    // ===== UI Elements =====
+    const els = {
+        launcher: document.querySelector('.chatbot-icon'),
+        widget: document.querySelector('.chat-window'),
+        body: document.querySelector('.chat-messages'),
+        btnClose: document.querySelector('.close-btn'),
+        suggWrap: null
+    };
+
+    // ===== Toggle =====
+    els.launcher.addEventListener('click', () => {
+        els.widget.classList.add('active');
+        $('#badge').hide();
     });
+    els.btnClose.addEventListener('click', (e) => {
+        e.stopPropagation();
+        els.widget.classList.remove('active');
+    });
+
+    // ===== Helpers =====
+    function scrollBottom() {
+        els.body.scrollTop = els.body.scrollHeight;
+    }
+    function addMsg(text, who = 'bot') {
+        const div = document.createElement('div');
+        div.className = `message ${who}-message`;
+        div.innerHTML = `<div>${text}</div><div class="timestamp">${new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}</div>`;
+        els.body.appendChild(div);
+        scrollBottom();
+    }
+    function showTyping() {
+        const wrap = document.createElement('div');
+        wrap.className = 'bot-typing';
+        wrap.innerHTML = `
+        <span>Bot is typing</span>
+        <div class="typing-dots"><span></span><span></span><span></span></div>`;
+        els.body.appendChild(wrap);
+        scrollBottom();
+        return wrap;
+    }
+
+    // ===== Suggestions Renderer =====
+    function renderOptions(options) {
+        if (els.suggWrap) els.suggWrap.remove();
+
+        els.suggWrap = document.createElement('div');
+        els.suggWrap.className = 'suggestions';
+
+        options.forEach(opt => {
+            const b = document.createElement('button');
+            b.className = 'chip';
+            b.type = 'button';
+            b.textContent = opt.label;
+            b.addEventListener('click', () => handleChoice(opt));
+            els.suggWrap.appendChild(b);
+        });
+
+        els.widget.appendChild(els.suggWrap);
+    }
+
+    // ===== Bot Flow =====
+    function botStep(key) {
+        const node = RULES[key];
+        if (!node) return;
+
+        const typer = showTyping();
+        setTimeout(() => {
+            typer.remove();
+
+            // 👇 yahan condition lagao
+            if (node.message === "[FORM_INCLUDED]") {
+                const formHtml = document.querySelector("#chatFormTemplate").innerHTML;
+                addMsg(formHtml, 'bot', true); // true = html message
+            } else {
+                addMsg(node.message, 'bot');
+            }
+
+            renderOptions(node.options || []);
+        }, 400);
+    }
+
+
+    function handleChoice(opt) {
+        addMsg(opt.label, 'user');
+        botStep(opt.goto);
+    }
+
+
+    // ===== Start conversation =====
+    botStep('start');
 
     function scrollToBottom() {
         const messages = $('.chat-messages');

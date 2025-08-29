@@ -2554,3 +2554,39 @@ body {
     height: 30vh;
   }
 }
+
+
+.suggestions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 10px;
+  border-top: 1px solid #ddd;
+  background: #fff;
+}
+
+/* .suggestions button{
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    border: none;
+    border-radius: 12px;
+    padding: 0.5rem 0.25rem;
+    font-size: 0.75rem;
+} */
+
+
+.chip {
+  padding: 6px 12px;
+  border-radius: 16px;
+  border: 1px solid var(--btn-border-color);
+  background: var(--secondary-color);
+  color: var(--primary-color);
+  cursor: pointer;
+  font-size: 13px;
+  transition: 0.2s;
+}
+
+.chip:hover {
+  background: var(--primary-color);
+  color: var(--light-color);
+}
