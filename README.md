@@ -34,13 +34,13 @@ Built with **Bootstrap 5**, **Remix Icons**, and **custom CSS styling**, it’s 
 https://tehamikamdar.github.io/wbookpress/
 ```
 
-## ⚙ Setup Instruction
-# 1. Clone the repository
+# ⚙ Setup Instruction
+## 1. Clone the repository
 git clone https://github.com/tehamikamdar/wbookpress.git
 
-# 2. Navigate into the project folder
+## 2. Navigate into the project folder
 cd wbookpress
 
-# 3. Open index.html in your browser
+## 3. Open index.html in your browser
 
 
