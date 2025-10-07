@@ -30,10 +30,8 @@ Built with **Bootstrap 5**, **Remix Icons**, and **custom CSS styling**, it’s 
 
 ## 🖥️ Demo Preview
 
-📍 _Add your live link or preview screenshot here_
-
 ```text
-[Live Demo](https://tehamikamdar.github.io/wbookpress/)
+https://tehamikamdar.github.io/wbookpress/
 ```
 
 ## ⚙ Setup Instruction
